@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <clipPath id="circle-clip-load">
+      <circle cx="150" cy="150" r="140"/>
+    </clipPath>
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1f0e35"/>
+      <stop offset="100%" stop-color="#1a0a2e"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer bezel -->
+  <circle cx="150" cy="150" r="148" fill="#111" stroke="#333" stroke-width="3"/>
+
+  <!-- Display area -->
+  <g clip-path="url(#circle-clip-load)">
+    <!-- Background -->
+    <circle cx="150" cy="150" r="140" fill="url(#bg-grad)"/>
+
+    <!-- Teal ring border -->
+    <circle cx="150" cy="150" r="137" fill="none" stroke="#00ffe5" stroke-width="3" opacity="0.8" filter="url(#glow)"/>
+
+    <!-- Grid lines (subtle) -->
+    <g stroke="#2d1050" stroke-width="0.5" opacity="0.4">
+      <line x1="150" y1="10" x2="150" y2="290"/>
+      <line x1="10" y1="150" x2="290" y2="150"/>
+      <circle cx="150" cy="150" r="35" fill="none"/>
+      <circle cx="150" cy="150" r="70" fill="none"/>
+      <circle cx="150" cy="150" r="105" fill="none"/>
+    </g>
+
+    <!-- Crosshair -->
+    <g stroke="#00ffe5" stroke-width="1.5" opacity="0.9" filter="url(#glow)">
+      <line x1="142" y1="150" x2="130" y2="150"/>
+      <line x1="158" y1="150" x2="170" y2="150"/>
+      <line x1="150" y1="142" x2="150" y2="130"/>
+      <line x1="150" y1="158" x2="150" y2="170"/>
+    </g>
+
+    <!-- Center dot -->
+    <circle cx="150" cy="150" r="3" fill="#00ffe5" filter="url(#glow)"/>
+
+    <!-- "ACQUIRING GPS" text -->
+    <text x="150" y="210" text-anchor="middle" font-family="monospace" font-size="11" fill="#00ffe5" opacity="0.7">ACQUIRING GPS...</text>
+
+    <!-- Satellite count -->
+    <text x="150" y="225" text-anchor="middle" font-family="monospace" font-size="9" fill="#00ffe5" opacity="0.5">SAT: 0</text>
+  </g>
+
+  <!-- Label -->
+  <text x="150" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#888">Loading Screen</text>
+</svg>

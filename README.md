@@ -4,6 +4,24 @@ A GTA Vice City-style circular minimap navigator for the **Waveshare ESP32-S3 1.
 
 ![ESP32-S3](https://img.shields.io/badge/ESP32--S3-blue) ![ESP-IDF](https://img.shields.io/badge/ESP--IDF-v5.x-green)
 
+## Display Preview
+
+<p align="center">
+  <img src="docs/mockup-loading.svg" width="240" alt="Loading screen"/>
+  &nbsp;&nbsp;
+  <img src="docs/mockup-map.svg" width="240" alt="Map view"/>
+  &nbsp;&nbsp;
+  <img src="docs/mockup-zoomed.svg" width="240" alt="Zoomed coastal view"/>
+</p>
+
+<p align="center">
+  <em>Left:</em> Loading screen while acquiring GPS fix &nbsp;|&nbsp;
+  <em>Center:</em> Map view with Vice City styling &nbsp;|&nbsp;
+  <em>Right:</em> Zoomed in near a coastline
+</p>
+
+The round display renders real Google Maps tiles restyled with Vice City's signature look — **neon pink roads**, **dark teal water**, and **deep purple land**. A white player arrow at the center rotates with your GPS heading.
+
 ## Features
 
 - **Live GPS tracking** — NMEA parsing from any standard GPS module (NEO-6M, etc.)
