@@ -1,0 +1,42 @@
+menu "Vice City Map Configuration"
+
+    config WIFI_SSID
+        string "WiFi SSID"
+        default "your_wifi_ssid"
+
+    config WIFI_PASSWORD
+        string "WiFi Password"
+        default "your_wifi_password"
+
+    config GOOGLE_MAPS_API_KEY
+        string "Google Maps Static API Key"
+        default "YOUR_API_KEY_HERE"
+
+    config GPS_UART_PORT
+        int "GPS UART port number"
+        default 1
+        range 0 2
+
+    config GPS_UART_TX
+        int "GPS UART TX GPIO"
+        default 43
+
+    config GPS_UART_RX
+        int "GPS UART RX GPIO"
+        default 44
+
+    config GPS_UART_BAUD
+        int "GPS UART baud rate"
+        default 9600
+
+    config MAP_ZOOM_LEVEL
+        int "Google Maps zoom level"
+        default 16
+        range 1 20
+
+    config MAP_FETCH_INTERVAL_MS
+        int "Map tile fetch interval (ms)"
+        default 5000
+        range 1000 60000
+
+endmenu
